@@ -7,8 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ScrapingConfiguration {// obs.: editar caminho do arquivo em caso de mudan�a de pasta
-	private String path = "C:\\Users\\jvict\\eclipse-workspace\\webscrapingf1\\ScrapingFile.txt";
-	private String path_2 = "C:\\Users\\jvict\\eclipse-workspace\\webscrapingf1\\ScrapingFile.xlsx";
+	private String path = "C:\\Users\\jvict\\eclipse-workspace\\webscrapingf1\\ScrapingFile-Pilotos.txt";
+	private String path_2 = "C:\\Users\\jvict\\eclipse-workspace\\webscrapingf1\\ScrapingFile-Equipes.txt";
 	// caminho para o arquivo a ser gravado
 
 	private OutputStreamWriter writer;// para escrever no arquivo
@@ -35,17 +35,24 @@ public class ScrapingConfiguration {// obs.: editar caminho do arquivo em caso d
 
 	// ------------------------------------------------------------------
 	private void executar() {
-		List<Piloto> Texto_Arquivo = new ArrayList<>();
-		Texto_Arquivo = Scrap.search();// chamando fun��o search da classe Scrap
-		imprimir_lista(Texto_Arquivo);
-		escreverFile(list_to_txt(Texto_Arquivo), path);// arquivo txt
-		// escreverFile(list_to_txt(Texto_Arquivo), path_2);//arquivo xlsx
+		Dados dados;
+		dados = new Dados();
+		
+		// chamando funcao search da classe Scrap que retorna dados (olhar estrutura Dados)
+		dados = Scrap.search();
+		
+
+		imprimir_lista_p(dados.pilotos);
+		escreverFile(list_to_txt_p(dados.pilotos), path);
+		
+		imprimir_lista_e(dados.equipes);
+		escreverFile(list_to_txt_e(dados.equipes), path_2);
 	}
 
-	private void imprimir_lista(List<Piloto> pilotos) {// imprimindo a lista
+	private void imprimir_lista_p(List<Piloto> pilotos) {// imprimindo a lista
 		int i;
 		String posicao, piloto, pais, equipe, pontuacao;
-		System.out.println("\n");
+		System.out.println("Classificação de Pilotos");
 		for (i = 1; i < pilotos.size(); i++) {
 			posicao = pilotos.get(i).getPosicao();
 			piloto = pilotos.get(i).getPiloto();
@@ -57,8 +64,19 @@ public class ScrapingConfiguration {// obs.: editar caminho do arquivo em caso d
 		}
 	}
 
-	private String list_to_txt(List<Piloto> pilotos) {// convertendo lista em texto numa única variável
-		String texto = "## JvReis\n\nPosição\tPiloto\tPaís\tEquipe\tPontuação\n";
+	private void imprimir_lista_e(List<Equipe> equipes) {// imprimindo a lista
+		int i;
+		String posicao, equipe, pontuacao;
+		System.out.println("\nClassificação de Equipes");
+		for (i = 1; i < equipes.size(); i++) {
+			posicao = equipes.get(i).getPosicao();
+			equipe = equipes.get(i).getEquipe();
+			pontuacao = equipes.get(i).getPontuacao();
+			System.out.println("Posição: " + posicao + "; Equipe: " + equipe + "; Pontuação: " + pontuacao + ".");
+		}
+	}
+	private String list_to_txt_p(List<Piloto> pilotos) {// convertendo lista em texto numa única variável
+		String texto = "Posição\tPiloto\tPaís\tEquipe\tPontuação\n";
 		int i;
 		String posicao, piloto, pais, equipe, pontuacao;
 		for (i = 1; i < pilotos.size(); i++) {
@@ -68,6 +86,20 @@ public class ScrapingConfiguration {// obs.: editar caminho do arquivo em caso d
 			equipe = pilotos.get(i).getEquipe();
 			pontuacao = pilotos.get(i).getPontuacao();
 			texto += posicao + "\t" + piloto + "\t" + pais + "\t" + equipe + "\t" + pontuacao + ".\n";
+		}
+
+		return texto;
+	}
+	
+	private String list_to_txt_e(List<Equipe> equipes) {// convertendo lista em texto numa única variável
+		String texto = "Posição\tEquipe\tPontuação\n";
+		int i;
+		String posicao, equipe, pontuacao;
+		for (i = 1; i < equipes.size(); i++) {
+			posicao = equipes.get(i).getPosicao();
+			equipe = equipes.get(i).getEquipe();
+			pontuacao = equipes.get(i).getPontuacao();
+			texto += posicao + "\t"  + equipe + "\t" + pontuacao + ".\n";
 		}
 
 		return texto;
