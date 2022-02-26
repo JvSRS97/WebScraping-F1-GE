@@ -16,7 +16,7 @@ public class Scrap {// classe que cont�m os dados HTML
 	// fun��o para buscar no site. Cria uma c�pia HTML da URL e buscar� elementos
 	// pela classe dada
 	// imprimir� os dados e retornar� uma string texto para escrita em arquivo
-	public static List<Piloto> search() {// retorna uma lista de descrição dos times (olhar classe time)
+	public static List<Piloto> search() {// retorna uma lista de descrição dos pilotos (olhar classe Piloto)
 		// 1 - URL do site a ser acessado
 		String link = ("https://ge.globo.com/motor/formula-1/noticia/f1-2021-confira-a-classificacao-de-pilotos-e-equipes.ghtml");// link
 																																	// para
