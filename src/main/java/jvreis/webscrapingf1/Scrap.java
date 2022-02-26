@@ -64,7 +64,7 @@ public class Scrap {// classe que cont�m os dados HTML
 			x.setPais(descricao.get(2).text());
 			x.setEquipe(descricao.get(3).text());
 			x.setPontuacao(descricao.get(4).text());
-			// adicionando o objeto na lista de objetos Time
+			// adicionando o objeto na lista de objetos de Pilotos
 			piloto_descricao.add(x);
 		}
 		return piloto_descricao;
