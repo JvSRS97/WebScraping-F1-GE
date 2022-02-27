@@ -1,10 +1,14 @@
-package jvreis.webscrapingf1;
+package jvreis.webscrapingf1.service;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
+
+import jvreis.webscrapingf1.classes.Dados;
+import jvreis.webscrapingf1.classes.Equipe;
+import jvreis.webscrapingf1.classes.Piloto;
 
 public class ScrapingConfiguration {// obs.: editar caminho do arquivo em caso de mudan�a de pasta
 	private String path = "C:\\Users\\jvict\\eclipse-workspace\\webscrapingf1\\ScrapingFile-Pilotos.txt";
@@ -39,7 +43,7 @@ public class ScrapingConfiguration {// obs.: editar caminho do arquivo em caso d
 		dados = new Dados();
 		
 		// chamando funcao search da classe Scrap que retorna dados (olhar estrutura Dados)
-		dados = Scrap.search();
+		dados = Scraping.search();
 		
 
 		imprimir_lista_p(dados.pilotos);

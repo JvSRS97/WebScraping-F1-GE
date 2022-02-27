@@ -1,10 +1,10 @@
-package jvreis.webscrapingf1;
+package jvreis.webscrapingf1.classes;
 
 import java.util.List;
 
 public class Dados {
-	List<Piloto> pilotos;
-	List<Equipe> equipes;
+	public List<Piloto> pilotos;
+	public List<Equipe> equipes;
 	
 	
     public Dados(List<Piloto> pilotos, List<Equipe> equipes) {

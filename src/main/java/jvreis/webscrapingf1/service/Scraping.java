@@ -1,4 +1,4 @@
-package jvreis.webscrapingf1;
+package jvreis.webscrapingf1.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,9 +8,13 @@ import org.jsoup.nodes.Document;//importado ao criar vari�vel "documento"
 import org.jsoup.nodes.Element;//importado ao criar vari�vel "elemento"
 import org.jsoup.select.Elements;
 
+import jvreis.webscrapingf1.classes.Dados;
+import jvreis.webscrapingf1.classes.Equipe;
+import jvreis.webscrapingf1.classes.Piloto;
+
 //Obs.: Comando Alt+Shift+s -> "Generate Getters and Setters" gera automaticamente as fun��es 
 //get e set para cada variavel
-public class Scrap {// classe que contem os dados HTML
+public class Scraping {// classe que contem os dados HTML
 //-------------------------------------------------
 	// retorna uma lista de descrição dos pilotos (olhar classe Piloto)
 	public static Dados search() {
