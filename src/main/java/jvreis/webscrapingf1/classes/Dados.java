@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:src/main/java/jvreis/webscrapingf1/classes/Dados.java
 package jvreis.webscrapingf1.classes;
-========
-package jvreis.webscrapingf1class;
->>>>>>>> 552192996d60e75796d3dc75ac9b775ddb693d8d:src/main/java/jvreis/webscrapingf1/webscrapingf1class/Dados.java
 
 import java.util.List;
 
