@@ -8,9 +8,15 @@ import org.jsoup.nodes.Document;//importado ao criar vari�vel "documento"
 import org.jsoup.nodes.Element;//importado ao criar vari�vel "elemento"
 import org.jsoup.select.Elements;
 
+<<<<<<< HEAD
 import jvreis.webscrapingf1.classes.Dados;
 import jvreis.webscrapingf1.classes.Equipe;
 import jvreis.webscrapingf1.classes.Piloto;
+=======
+import jvreis.webscrapingf1class.Dados;
+import jvreis.webscrapingf1class.Equipe;
+import jvreis.webscrapingf1class.Piloto;
+>>>>>>> 552192996d60e75796d3dc75ac9b775ddb693d8d
 
 //Obs.: Comando Alt+Shift+s -> "Generate Getters and Setters" gera automaticamente as fun��es 
 //get e set para cada variavel

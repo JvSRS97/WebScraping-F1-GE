@@ -6,9 +6,15 @@ import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+<<<<<<< HEAD
 import jvreis.webscrapingf1.classes.Dados;
 import jvreis.webscrapingf1.classes.Equipe;
 import jvreis.webscrapingf1.classes.Piloto;
+=======
+import jvreis.webscrapingf1class.Dados;
+import jvreis.webscrapingf1class.Equipe;
+import jvreis.webscrapingf1class.Piloto;
+>>>>>>> 552192996d60e75796d3dc75ac9b775ddb693d8d
 
 public class ScrapingConfiguration {// obs.: editar caminho do arquivo em caso de mudan�a de pasta
 	private String path = "C:\\Users\\jvict\\eclipse-workspace\\webscrapingf1\\ScrapingFile-Pilotos.txt";
